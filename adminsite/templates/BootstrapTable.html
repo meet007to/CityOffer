@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>SHOP-NAME</th>
+                    <th>EMAIL</th>
+                    <th>ACTION</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>SHOP-NAME</th>
+                    <th>EMAIL</th>
+                    <th>ACTION</th>
+                    <th>ACTION</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Narendrasinh</td>
+                    <td>ASC-HOME</td>
+                    <td>narendra.vaghela2001@gmail.com</td>
+                    <td><a href="#">Edit </a></td>
+                    <td><a href="#">View Accont</a></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+
+    <link href="assets/datatables.bootstrap4.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/jquery.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="assets/jquery.datatables.min.js"></script>
+
+    <script src="assets/datatables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>

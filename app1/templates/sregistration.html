@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Form-v9 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/css/nunito-font.css' %}">
+	<!-- Main Style Css -->
+	<link rel="stylesheet" href="{% static 'form/css/style.css' %}" />
+</head>
+
+<body class="form-v9">
+	<div class="page-content">
+		<div class="form-v9-content" style="background-image: url('{% static "form/images/form-v9.jpg" %}')">
+			<form class="form-detail" method="POST">
+
+				{% csrf_token %}
+				<h4 style="color:red">
+					{% if messages %}
+
+					{% for message in messages %}
+					{{ message }}
+					{% endfor %}
+					{% endif %}
+
+				</h4>
+				<h2>Sign-up Form </h2>
+
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="shopname" id="id_shopname" class="input-text" placeholder="Shopname"
+							required>
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="firstname" id="id_firstname" class="input-text"
+							placeholder="First Name" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="lastname" id="id_lastname" class="input-text" placeholder="Last Name"
+							required>
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="address" id="id_address" class="input-text" placeholder="Your Address"
+							required pattern="{4,5,6}">
+					</div>
+					<div class="form-row">
+						<input type="number" name="mobile" id="id_mobile" class="input-text" placeholder="Your Mobile"
+							required>
+					</div>
+				</div>
+
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="date" name="dob" id="id_dob" value="2020-04-30" class="input-text"
+							placeholder="Your Birthdate">
+					</div>
+					<div class="form-row">
+						<input type="text" name="pincode" id="id_pincode" class="input-text" placeholder="Your Pincode"
+							required pattern="{4,5,6}">
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="state" id="id_state" class="input-text" placeholder="State" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="city" id="id_city" class="input-text" placeholder="City" required>
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="email" name="semail" id="id_semail" class="input-text" placeholder="Your Email"
+							required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					</div>
+					<div class="form-row">
+						<select id="id_gender" name="gender" class="input-text">
+							<option>Select Gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Other">Other</option>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="password" name="password" id="id_password" class="input-text"
+							placeholder="Your Password" required>
+					</div>
+
+					<div class="form-row">
+						<input type="password" id="password1" name="password1" class="input-text"
+							placeholder="Comfirm Password" required>
+					</div>
+				</div>
+
+				<div class="form-row-last">
+					<input type="submit">
+				</div>
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

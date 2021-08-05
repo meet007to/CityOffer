@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Form-v9 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{% static 'form/css/nunito-font.css' %}">
+	<!-- Main Style Css -->
+	<link rel="stylesheet" href="{% static 'form/css/style.css' %}" />
+</head>
+
+<body class="form-v9">
+	<div class="page-content">
+		<div class="form-v9-content" style="background-image: url('{% static "form/images/form-v9.jpg" %}')">
+			<form class="form-detail" method="POST">
+				{% csrf_token %}
+				<a href="/shopkeeperlogin.html" style="color:white">
+					<h3>Click Here For Login As ShopKeeper</h3>
+				</a><br> <br> </br>
+
+
+
+				<h2>Customer Login</h2>
+				<center>
+					<div class="form-row-total">
+						<div class="form-row">
+							<input type="text" name="cemail" id="id_cemail" value="{{ cemail }}" class="input-text"
+								placeholder="Email" style="margin-left: 12.5em;" required>
+
+						</div>
+						<h4>
+							{% if messages %}
+							{% for message in messages %}
+							{{ message }}
+							{% endfor %}
+							{% endif %}
+						</h4>
+
+
+					</div>
+					<div class="form-row">
+						<div class="form-row-total">
+							<input type="password" name="password" id="id_password" value="{{ password }}"
+								class="input-text" placeholder="password" required>
+						</div>
+					</div>
+
+				</center>
+
+				<div class="form-row-last">
+					<input type="submit" name="Login" class="register" value="Login">
+					<br>
+					<a href="/cregistration.html" style="color:white"> Create New User Account</a><br>
+					<a href="/sregistration.html" style="color:white"> Create New Seller Account </a>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
